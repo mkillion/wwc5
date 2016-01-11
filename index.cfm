@@ -193,7 +193,7 @@
 
 		drgLayer = new esri.layers.ArcGISImageServiceLayer("http://imageserver.kansasgis.org/arcgis/rest/services/Statewide/DRG/ImageServer", { visible:false, imageServiceParameters:imageServiceParameters });
 
-		naipLayer = new esri.layers.ArcGISImageServiceLayer("http://services.kansasgis.org/arcgis/rest/services/IMAGERY_STATEWIDE/2014_NAIP_1m_Color/ImageServer", { visible:false, imageServiceParameters:imageServiceParameters });
+		naipLayer = new esri.layers.ArcGISImageServiceLayer("http://services.kgs.ku.edu/arcgis7/rest/services/IMAGERY_STATEWIDE/FSA_NAIP_2014_Color/ImageServer", { visible:false, imageServiceParameters:imageServiceParameters });
 
 		doqq02Layer = new esri.layers.ArcGISImageServiceLayer("http://imageserver.kansasgis.org/arcgis/rest/services/Statewide/2002_DOQQ_1m_bw/ImageServer", { visible:false, imageServiceParameters:imageServiceParameters });
 
