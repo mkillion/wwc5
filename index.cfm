@@ -1631,6 +1631,18 @@
     <tr><td></td><td><button class="label" onclick="quickZoom('plss');">Go</button></td></tr>
     </table>
     <div id="or"><img src="images/or.jpg" /></div>
+    <table>
+    	<tr><td align="right">Latitude: </td><td align="left"><input type="text" id="latitude" size="10" /><span class="note" style="font-weight:normal">&nbsp;(ex. 39.12345)</span></td></tr>
+        <tr><td align="right">Longitude: </td><td align="left"><input type="text" id="longitude" size="10" /><span class="note" style="font-weight:normal">&nbsp;(ex. -95.12345)</span></td></tr>
+        <tr><td align="right">Datum: </td><td align="left">
+        	<select id="datum">
+        		<option value="nad27">NAD27</option>
+        		<option value="wgs84">WGS84</option>
+        	</select>
+       	<tr><td></td><td align="left"><button class="label" onclick="zoomToLatLong(dojo.byId('latitude').value,dojo.byId('longitude').value);dijit.byId('quickzoom').hide();delFilter();">Go</button></td></tr>
+    </table>
+
+    <div id="or"><img src="images/or.jpg" /></div>
 	<div class="input">
 		<span class="label">KGS ID Number:</span>
         <input type="text" size="5" id="seqnum" />
