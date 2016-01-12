@@ -941,6 +941,35 @@
 	}
 
 
+	zoomToLatLong = function(lat,lon,datum) {
+		if (lon > 0) {
+			lon = 0 - lon;
+		}
+
+		if (datum === 'nad27') {
+			var srWkid = 4267;
+		} else {
+			var srWkid = 4326;	// wgs84
+		}
+
+		var geoPt = new esri.geometry.Point(lon, lat, new esri.SpatialReference({ wkid:srWkid }));
+		var wmPt = esri.geometry.geographicToWebMercator(geoPt);
+
+		var ptExt = new esri.geometry.Extent(wmPt.x - 1000, wmPt.y - 1000, wmPt.x + 1000, wmPt.y + 1000, new esri.SpatialReference({ wkid:102100 }));
+
+		var ptSymbol = new esri.symbol.SimpleMarkerSymbol();
+		ptSymbol.setStyle(esri.symbol.SimpleMarkerSymbol.STYLE_X);
+		ptSymbol.setOutline(new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255,0,0]), 3));
+		ptSymbol.size = 20;
+
+		map.graphics.clear();
+		var graphic = new esri.Graphic(wmPt,ptSymbol);
+		map.graphics.add(graphic);
+
+		map.setExtent(ptExt);
+	}
+
+
 	function filterWells(method) {
 		var layerDef = [];
 		var mExt = map.extent;
@@ -1639,7 +1668,7 @@
         		<option value="nad27">NAD27</option>
         		<option value="wgs84">WGS84</option>
         	</select>
-       	<tr><td></td><td align="left"><button class="label" onclick="zoomToLatLong(dojo.byId('latitude').value,dojo.byId('longitude').value);dijit.byId('quickzoom').hide();delFilter();">Go</button></td></tr>
+       	<tr><td></td><td align="left"><button class="label" onclick="zoomToLatLong(dojo.byId('latitude').value,dojo.byId('longitude').value,dojo.byId('datum').value);">Go</button></td></tr>
     </table>
 
     <div id="or"><img src="images/or.jpg" /></div>
