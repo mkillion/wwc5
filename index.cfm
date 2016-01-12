@@ -1672,9 +1672,9 @@
     </table>
     <div id="or"><img src="images/or.jpg" /></div>
     <table>
-    	<tr><td align="right">Latitude: </td><td align="left"><input type="text" id="latitude" size="10" /><span class="note" style="font-weight:normal">&nbsp;(ex. 39.12345)</span></td></tr>
-        <tr><td align="right">Longitude: </td><td align="left"><input type="text" id="longitude" size="10" /><span class="note" style="font-weight:normal">&nbsp;(ex. -95.12345)</span></td></tr>
-        <tr><td align="right">Datum: </td><td align="left">
+    	<tr><td class="label" align="right">Latitude: </td><td align="left"><input type="text" id="latitude" size="10" /><span class="note" style="font-weight:normal">&nbsp;(ex. 39.12345)</span></td></tr>
+        <tr><td class="label" align="right">Longitude: </td><td align="left"><input type="text" id="longitude" size="10" /><span class="note" style="font-weight:normal">&nbsp;(ex. -95.12345)</span></td></tr>
+        <tr><td class="label" align="right">Datum: </td><td align="left">
         	<select id="datum">
         		<option value="nad27">NAD27</option>
         		<option value="wgs84">WGS84</option>
