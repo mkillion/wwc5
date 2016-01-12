@@ -49,6 +49,7 @@
     dojo.require("esri.geometry.Point");
     dojo.require("esri.graphic");
     dojo.require("esri.tasks.IdentifyParameters");
+    dojo.require("esri.tasks.ProjectParameters");
 
 	dojo.require("dijit.layout.ContentPane");
 	dojo.require("dijit.layout.TabContainer");
@@ -942,31 +943,41 @@
 
 
 	zoomToLatLong = function(lat,lon,datum) {
+		var gsvc = new esri.tasks.GeometryService("http://services.kgs.ku.edu/arcgis2/rest/services/Utilities/Geometry/GeometryServer");
+		var params = new esri.tasks.ProjectParameters();
+		var wgs84Sr = new esri.SpatialReference( { wkid: 4326 } );
+
 		if (lon > 0) {
 			lon = 0 - lon;
 		}
 
-		if (datum === 'nad27') {
-			var srWkid = 4267;
+		if (datum === "nad27") {
+			var p = new esri.geometry.Point(lon, lat, new esri.SpatialReference( { wkid: 4267 } ) );
+			params.geometries = [p];
+			params.outSR = wgs84Sr;
 		} else {
-			var srWkid = 4326;	// wgs84
+			// I know...
+			var p = new esri.geometry.Point(lon, lat, new esri.SpatialReference( { wkid: 4326 } ) );
+			params.geometries = [p];
+			params.outSR = wgs84Sr;
 		}
 
-		var geoPt = new esri.geometry.Point(lon, lat, new esri.SpatialReference({ wkid:srWkid }));
-		var wmPt = esri.geometry.geographicToWebMercator(geoPt);
+		gsvc.project(params, function(features) {
+			var pt84 = new esri.geometry.Point(features[0].x, features[0].y, wgs84Sr);
 
-		var ptExt = new esri.geometry.Extent(wmPt.x - 1000, wmPt.y - 1000, wmPt.x + 1000, wmPt.y + 1000, new esri.SpatialReference({ wkid:102100 }));
+			var wmPt = esri.geometry.geographicToWebMercator(pt84);
 
-		var ptSymbol = new esri.symbol.SimpleMarkerSymbol();
-		ptSymbol.setStyle(esri.symbol.SimpleMarkerSymbol.STYLE_X);
-		ptSymbol.setOutline(new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255,0,0]), 3));
-		ptSymbol.size = 20;
+			var ptSymbol = new esri.symbol.SimpleMarkerSymbol();
+			ptSymbol.setStyle(esri.symbol.SimpleMarkerSymbol.STYLE_X);
+			ptSymbol.setOutline(new esri.symbol.SimpleLineSymbol(esri.symbol.SimpleLineSymbol.STYLE_SOLID, new dojo.Color([255,0,0]), 3));
+			ptSymbol.size = 20;
 
-		map.graphics.clear();
-		var graphic = new esri.Graphic(wmPt,ptSymbol);
-		map.graphics.add(graphic);
+			map.graphics.clear();
+			var graphic = new esri.Graphic(wmPt,ptSymbol);
+			map.graphics.add(graphic);
 
-		map.setExtent(ptExt);
+			map.centerAndZoom(wmPt, 18);
+		} );
 	}
 
 
