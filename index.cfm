@@ -951,16 +951,11 @@
 			lon = 0 - lon;
 		}
 
-		if (datum === "nad27") {
-			var p = new esri.geometry.Point(lon, lat, new esri.SpatialReference( { wkid: 4267 } ) );
-			params.geometries = [p];
-			params.outSR = wgs84Sr;
-		} else {
-			// I know...
-			var p = new esri.geometry.Point(lon, lat, new esri.SpatialReference( { wkid: 4326 } ) );
-			params.geometries = [p];
-			params.outSR = wgs84Sr;
-		}
+		var srId = (datum === "nad27") ? 4267 : 4326;
+
+		var p = new esri.geometry.Point(lon, lat, new esri.SpatialReference( { wkid: srId } ) );
+		params.geometries = [p];
+		params.outSR = wgs84Sr;
 
 		gsvc.project(params, function(features) {
 			var pt84 = new esri.geometry.Point(features[0].x, features[0].y, wgs84Sr);
