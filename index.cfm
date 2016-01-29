@@ -196,7 +196,7 @@
 
 		naipLayer = new esri.layers.ArcGISImageServiceLayer("http://services.kgs.ku.edu/arcgis7/rest/services/IMAGERY_STATEWIDE/FSA_NAIP_2014_Color/ImageServer", { visible:false, imageServiceParameters:imageServiceParameters });
 
-		doqq02Layer = new esri.layers.ArcGISImageServiceLayer("http://imageserver.kansasgis.org/arcgis/rest/services/Statewide/2002_DOQQ_1m_bw/ImageServer", { visible:false, imageServiceParameters:imageServiceParameters });
+		doqq02Layer = new esri.layers.ArcGISImageServiceLayer("http://services.kgs.ku.edu/arcgis7/rest/services/IMAGERY_STATEWIDE/Kansas_DOQQ_2002/ImageServer", { visible:false, imageServiceParameters:imageServiceParameters });
 
 		// Add layers (first layer added displays on the bottom):
 		map.addLayer(baseLayer);
