@@ -155,7 +155,7 @@
             <ul>
                 <li><a href="http://chasm.kgs.ku.edu/apex/qualified.well_page.DisplayWell?f_kid=#url.kid#" target="_blank">Full KGS Database Entry</a></li>
             </ul>
-        
+
 			<cfif qCheckLAS.recordcount gt 0>
                 <cfif qCheckLAS.recordcount eq 1>
                     <b>#qCheckLAS.recordcount# LAS file found:</b>
@@ -238,7 +238,7 @@
         <ul>
             <li><a href="http://chasm.kgs.ku.edu/apex/oil.ogf4.IDProdQuery?FieldNumber=#url.kid#" target="_blank">Full KGS Database Entry</a></li>
         </ul>
-        
+
     </cfoutput>
 </cfif>
 
@@ -327,7 +327,7 @@
             <tr><td style='font:normal normal normal 11px Arial;color:##CC0000'>Static Water Level:</td><td style='font:normal normal normal 11px Arial''>#static_water_level# <cfif #static_water_level# neq "">ft</cfif></td></tr>
             <tr style='background-color:##D9E6FB'><td style='font:normal normal normal 11px Arial;color:##CC0000'>Estimated Yield:</td><td style='font:normal normal normal 11px Arial''>#estimeted_yield# <cfif #estimeted_yield# neq "">gpm</cfif></td></tr>
             <tr><td style='font:normal normal normal 11px Arial;color:##CC0000'>Well Use:</td><td style='font:normal normal normal 11px Arial''>#use#</td></tr>
-            <tr style='background-color:##D9E6FB'><td style='font:normal normal normal 11px Arial;color:##CC0000'>Other ID:</td><td style='font:normal normal normal 11px Arial''>#monitoring_number#</td></tr>
+            <tr style='background-color:##D9E6FB'><td style='font:normal normal normal 11px Arial;color:##CC0000'>Other ID:</td><td style='font:normal normal normal 11px Arial'>#monitoring_number#</td></tr>
             <tr><td style='font:normal normal normal 11px Arial;color:##CC0000'>Completion Date:</td><td style='font:normal normal normal 11px Arial''>#DateFormat(completion_date,'mmm-dd-yyyy')#</td></tr>
             <tr style='background-color:##D9E6FB'><td style='font:normal normal normal 11px Arial;color:##CC0000'>Driller:</td><td style='font:normal normal normal 11px Arial''>#Contractor#</td></tr>
             <tr><td style='font:normal normal normal 11px Arial;color:##CC0000'>DWR Application Number:</td><td style='font:normal normal normal 11px Arial''>#dwr_appropriation_number#</td></tr>
@@ -338,7 +338,7 @@
         <ul>
             <li><a href="http://chasm.kgs.ku.edu/apex/wwc5.wwc5d2.well_details?well_id=#url.seq#" target="_blank">Full KGS Database Entry</a></li>
         </ul>
-        
+
     </cfoutput>
     </cfif>
 </cfif>
