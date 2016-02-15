@@ -330,7 +330,7 @@
             <tr style='background-color:##D9E6FB'><td style='font:normal normal normal 11px Arial;color:##CC0000'>Other ID:</td><td style='font:normal normal normal 11px Arial'>#monitoring_number#</td></tr>
             <tr><td style='font:normal normal normal 11px Arial;color:##CC0000'>Completion Date:</td><td style='font:normal normal normal 11px Arial''>#DateFormat(completion_date,'mmm-dd-yyyy')#</td></tr>
             <tr style='background-color:##D9E6FB'><td style='font:normal normal normal 11px Arial;color:##CC0000'>Driller:</td><td style='font:normal normal normal 11px Arial''>#Contractor#</td></tr>
-            <tr><td style='font:normal normal normal 11px Arial;color:##CC0000'>DWR Application Number:</td><td style='font:normal normal normal 11px Arial''>#dwr_appropriation_number#</td></tr>
+            <tr><td style='font:normal normal normal 11px Arial;color:##CC0000'>DWR Application Number:</td><td style='font:normal normal normal 11px Arial'>#dwr_appropriation_number#</td></tr>
             <tr style='background-color:##D9E6FB'><td style='font:normal normal normal 11px Arial;color:##CC0000'>KGS Record Number:</td><td style='font:normal normal normal 11px Arial'>#input_seq_number#</td></tr>
         </table>
         <p>
