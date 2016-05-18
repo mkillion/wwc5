@@ -103,90 +103,90 @@
 		// Define layers:
 		baseLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer");
 
-		countyLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer");
+		countyLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer");
 		countyLayer.setVisibleLayers([2]);
 
 
-		wwc5_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer");
+		wwc5_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer");
 		wwc5_NoLabel_Layer.setVisibleLayers([8]);
 
-		wwc5_DepthYieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5_DepthYieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5_DepthYieldLabel_Layer.setVisibleLayers([9]);
 
-		wwc5_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5_OwnerLabel_Layer.setVisibleLayers([10]);
 
-		wwc5_LevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5_LevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5_LevelLabel_Layer.setVisibleLayers([11]);
 
-		wwc5_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5_DepthLabel_Layer.setVisibleLayers([30]);
 
-		wwc5_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5_YieldLabel_Layer.setVisibleLayers([31]);
 
 
 
-		wwc5Yield_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Yield_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Yield_NoLabel_Layer.setVisibleLayers([12]);
 
-		wwc5Yield_DepthYieldLabe_lLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Yield_DepthYieldLabe_lLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Yield_DepthYieldLabe_lLayer.setVisibleLayers([13]);
 
-		wwc5Yield_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Yield_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Yield_OwnerLabel_Layer.setVisibleLayers([14]);
 
-		wwc5Yield_LevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Yield_LevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Yield_LevelLabel_Layer.setVisibleLayers([15]);
 
-		wwc5Yield_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Yield_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Yield_DepthLabel_Layer.setVisibleLayers([16]);
 
-		wwc5Yield_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Yield_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Yield_YieldLabel_Layer.setVisibleLayers([17]);
 
 
 
-		wwc5Depth_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Depth_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Depth_NoLabel_Layer.setVisibleLayers([18]);
 
-		wwc5Depth_DepthYieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Depth_DepthYieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Depth_DepthYieldLabel_Layer.setVisibleLayers([19]);
 
-		wwc5Depth_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Depth_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Depth_OwnerLabel_Layer.setVisibleLayers([20]);
 
-		wwc5Depth_StaticLevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Depth_StaticLevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Depth_StaticLevelLabel_Layer.setVisibleLayers([21]);
 
-		wwc5Depth_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Depth_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Depth_DepthLabel_Layer.setVisibleLayers([22]);
 
-		wwc5Depth_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Depth_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Depth_YieldLabel_Layer.setVisibleLayers([23]);
 
 
 
-		wwc5Level_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Level_NoLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Level_NoLabel_Layer.setVisibleLayers([24]);
 
-		wwc5Level_DepthYieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Level_DepthYieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Level_DepthYieldLabel_Layer.setVisibleLayers([25]);
 
-		wwc5Level_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Level_OwnerLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Level_OwnerLabel_Layer.setVisibleLayers([26]);
 
-		wwc5Level_StaticLevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Level_StaticLevelLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Level_StaticLevelLabel_Layer.setVisibleLayers([27]);
 
-		wwc5Level_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Level_DepthLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Level_DepthLabel_Layer.setVisibleLayers([28]);
 
-		wwc5Level_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
+		wwc5Level_YieldLabel_Layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer", { visible:false });
 		wwc5Level_YieldLabel_Layer.setVisibleLayers([29]);
 
 
-		plssLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/plss/plss/MapServer");
+		plssLayer = new esri.layers.ArcGISTiledMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/plss/plss/MapServer");
 
 
 		var imageServiceParameters = new esri.layers.ImageServiceParameters();
@@ -246,7 +246,7 @@
 
 		// Set up overview map and disable its navigation:
 		ovMap = new esri.Map("ovmap_div", { slider:false, nav:false, logo:false });
-		ovLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/ov_counties/MapServer");
+		ovLayer = new esri.layers.ArcGISDynamicMapServiceLayer("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/ov_counties/MapServer");
 		ovMap.addLayer(ovLayer);
 
 		dojo.connect(ovMap, "onLoad", function() {
@@ -266,7 +266,7 @@
             var extType = pairs[0].substring(11);
             var extValue = pairs[1].substring(12);
 
-            var findTask = new esri.tasks.FindTask("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer");
+            var findTask = new esri.tasks.FindTask("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer");
 			var findParams = new esri.tasks.FindParameters();
 			findParams.returnGeometry = true;
 			findParams.contains = false;
@@ -389,7 +389,7 @@
 
 
 	function executeIdTask(evt) {
-		identify = new esri.tasks.IdentifyTask("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer");
+		identify = new esri.tasks.IdentifyTask("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer");
 		// Set task parameters:
         identifyParams = new esri.tasks.IdentifyParameters();
         identifyParams.tolerance = 3;
@@ -728,7 +728,7 @@
 
 		var outSR = new esri.SpatialReference({ wkid: 4267});
 
-		var gsvc = new esri.tasks.GeometryService("http://services.kgs.ku.edu/arcgis2/rest/services/Utilities/Geometry/GeometryServer");
+		var gsvc = new esri.tasks.GeometryService("http://services.kgs.ku.edu/arcgis8/rest/services/Utilities/Geometry/GeometryServer");
 		gsvc.project([ map.extent ], outSR, function(features) {
 			//var outCoords = features[0].geometry;
 			var xMin = features[0].xmin;
@@ -833,7 +833,7 @@
 
 
 	function quickZoom(type, value, button) {
-		findTask = new esri.tasks.FindTask("http://services.kgs.ku.edu/arcgis2/rest/services/wwc5/wwc5_general/MapServer");
+		findTask = new esri.tasks.FindTask("http://services.kgs.ku.edu/arcgis8/rest/services/wwc5/wwc5_general/MapServer");
 
 		findParams = new esri.tasks.FindParameters();
 		findParams.returnGeometry = true;
@@ -947,7 +947,7 @@
 
 
 	zoomToLatLong = function(lat,lon,datum) {
-		var gsvc = new esri.tasks.GeometryService("http://services.kgs.ku.edu/arcgis2/rest/services/Utilities/Geometry/GeometryServer");
+		var gsvc = new esri.tasks.GeometryService("http://services.kgs.ku.edu/arcgis8/rest/services/Utilities/Geometry/GeometryServer");
 		var params = new esri.tasks.ProjectParameters();
 		var wgs84Sr = new esri.SpatialReference( { wkid: 4326 } );
 
@@ -1358,7 +1358,7 @@
 	}
 
 	function printPDF() {
-		var printUrl = 'http://services.kgs.ku.edu/arcgis2/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task';
+		var printUrl = 'http://services.kgs.ku.edu/arcgis1/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task';
 		var printTask = new esri.tasks.PrintTask(printUrl);
         var printParams = new esri.tasks.PrintParameters();
         var template = new esri.tasks.PrintTemplate();
