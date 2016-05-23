@@ -987,6 +987,7 @@
 
 			map.centerAndZoom(wmPt, 18);
 		} );
+		dijit.byId('quickzoom').hide();
 	}
 
 
