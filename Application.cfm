@@ -7,4 +7,4 @@
 <cfset application.outputDir = "http://vmpyrite.kgs.ku.edu/KgsMaps/oilgas/output">
 
 
-<cfset application.wellsTable = "wwc5_wells_3857">
+<cfset application.wellsTable = "wwc5_wells">
