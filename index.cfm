@@ -486,7 +486,7 @@
 						content += "<tr><td>" + results[i].feature.attributes["field_name"] + "</td><td><A style='text-decoration:underline;color:blue;cursor:pointer;' onclick='showPoly(featureset[" + i + "].feature,1);'>display</A></td></tr>";
 						break;
 					case 8:
-						results.sort(sortOwner);
+						// results.sort(sortOwner);
 
 						selectionType = "wwc5";
 						var title = results.length + " water wells were selected:";
@@ -504,89 +504,91 @@
 							status = "Plugged";
 						}
 
-						var useCodeAtt = results[i].feature.attributes["WATER_USE_CODE"];
-						switch (useCodeAtt) {
-							case '1':
-								useCode = "Domestic";
-								break;
-							case '2':
-								useCode = "Irrigation";
-								break;
-							case '4':
-								useCode = "Industrial";
-								break;
-							case '5':
-								useCode = "Public Water Supply";
-								break;
-							case '6':
-								useCode = "Oil Field Water Supply";
-								break;
-							case '7':
-								useCode = "Lawn and Garden - domestic only";
-								break;
-							case '8':
-								useCode = "Air Conditioning";
-								break;
-							case '9':
-								useCode = "Dewatering";
-								break;
-							case '10':
-								useCode = "Monitoring well/observation/piezometer";
-								break;
-							case '11':
-								useCode = "Injection well/air sparge (AS)/shallow";
-								break;
-							case '12':
-								useCode = "Other";
-								break;
-							case '107':
-								useCode = "Test hole/well";
-								break;
-							case '116':
-								useCode = "Feedlot/Livestock/Windmill";
-								break;
-							case '122':
-								useCode = "Recovery/Soil Vapor Extraction/Soil Vent";
-								break;
-							case '183':
-								useCode = "(unstated)/abandoned";
-								break;
-							case '189':
-								useCode = "Road Construction";
-								break;
-							case '237':
-								useCode = "Pond/Swimming Pool/Recreation";
-								break;
-							case '240':
-								useCode = "Cathodic Protection Borehole";
-								break;
-							case '242':
-								useCode = "Recharge Well";
-								break;
-							case '245':
-								useCode = "Heat Pump (Closed Loop/Disposal), Geothermal";
-								break;
-							case '260':
-								useCode = "Domestic, changed from Irrigation";
-								break;
-							case '270':
-								useCode = "Domestic, changed from Oil Field Water Supply";
-								break;
-							default:
-								useCode = "";
-						}
+						// var useCodeAtt = results[i].feature.attributes["WATER_USE_CODE"];
+
+						// switch (useCodeAtt) {
+						// 	case '1':
+						// 		useCode = "Domestic";
+						// 		break;
+						// 	case '2':
+						// 		useCode = "Irrigation";
+						// 		break;
+						// 	case '4':
+						// 		useCode = "Industrial";
+						// 		break;
+						// 	case '5':
+						// 		useCode = "Public Water Supply";
+						// 		break;
+						// 	case '6':
+						// 		useCode = "Oil Field Water Supply";
+						// 		break;
+						// 	case '7':
+						// 		useCode = "Lawn and Garden - domestic only";
+						// 		break;
+						// 	case '8':
+						// 		useCode = "Air Conditioning";
+						// 		break;
+						// 	case '9':
+						// 		useCode = "Dewatering";
+						// 		break;
+						// 	case '10':
+						// 		useCode = "Monitoring well/observation/piezometer";
+						// 		break;
+						// 	case '11':
+						// 		useCode = "Injection well/air sparge (AS)/shallow";
+						// 		break;
+						// 	case '12':
+						// 		useCode = "Other";
+						// 		break;
+						// 	case '107':
+						// 		useCode = "Test hole/well";
+						// 		break;
+						// 	case '116':
+						// 		useCode = "Feedlot/Livestock/Windmill";
+						// 		break;
+						// 	case '122':
+						// 		useCode = "Recovery/Soil Vapor Extraction/Soil Vent";
+						// 		break;
+						// 	case '183':
+						// 		useCode = "(unstated)/abandoned";
+						// 		break;
+						// 	case '189':
+						// 		useCode = "Road Construction";
+						// 		break;
+						// 	case '237':
+						// 		useCode = "Pond/Swimming Pool/Recreation";
+						// 		break;
+						// 	case '240':
+						// 		useCode = "Cathodic Protection Borehole";
+						// 		break;
+						// 	case '242':
+						// 		useCode = "Recharge Well";
+						// 		break;
+						// 	case '245':
+						// 		useCode = "Heat Pump (Closed Loop/Disposal), Geothermal";
+						// 		break;
+						// 	case '260':
+						// 		useCode = "Domestic, changed from Irrigation";
+						// 		break;
+						// 	case '270':
+						// 		useCode = "Domestic, changed from Oil Field Water Supply";
+						// 		break;
+						// 	default:
+						// 		useCode = "";
+						// }
 
 						if (classification == 'noclass') {
-							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + useCode + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
+							console.log(results[i].feature.attributes["INPUT_SEQ_NUMBER"]);
+							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + results[i].feature.attributes["USE_DESC"] + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
 						}
 						if (classification == 'yieldclass') {
-							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + useCode + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='5%'>" + results[i].feature.attributes["ESTIMETED_YIELD"] + "<td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
+							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + results[i].feature.attributes["USE_DESC"] + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='5%'>" + results[i].feature.attributes["ESTIMETED_YIELD"] + "<td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
 						}
 						if (classification == 'depthclass') {
-							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + useCode + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='5%'>" + results[i].feature.attributes["DEPTH_OF_COMPLETED_WELL"] + "<td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
+							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + results[i].feature.attributes["USE_DESC"] + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='5%'>" + results[i].feature.attributes["DEPTH_OF_COMPLETED_WELL"] + "<td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
 						}
 						if (classification == 'levelclass') {
-							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + useCode + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='5%'>" + results[i].feature.attributes["STATIC_WATER_LEVEL"] + "<td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
+							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + results[i].feature.attributes["USE_DESC"] + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='5%'>" + results[i].feature.attributes["STATIC_WATER_LEVEL"] + "<td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
 						}
 				}
 
