@@ -416,10 +416,13 @@
 
 
 	function sortOwner(a, b) {
-        var A = a.feature.attributes["owner_name"];
-        var B = b.feature.attributes["owner_name"];
-        if (A < B) { return -1 }
-        if (A > B) { return 1 }
+        if (a.feature.attributes["OWNER_NAME"] < b.feature.attributes["OWNER_NAME"]) { return -1 }
+        if (a.feature.attributes["OWNER_NAME"] > b.feature.attributes["OWNER_NAME"]) { return 1 }
+        if (a.feature.attributes["OWNER_NAME"] === b.feature.attributes["OWNER_NAME"]) {
+			if (a.feature.attributes["INPUT_SEQ_NUMBER"] < b.feature.attributes["INPUT_SEQ_NUMBER"]) { return -1; }
+			if (a.feature.attributes["INPUT_SEQ_NUMBER"] > b.feature.attributes["INPUT_SEQ_NUMBER"]) { return 1; }
+				return 0;
+			}
         return 0;
     }
 
@@ -486,7 +489,7 @@
 						content += "<tr><td>" + results[i].feature.attributes["field_name"] + "</td><td><A style='text-decoration:underline;color:blue;cursor:pointer;' onclick='showPoly(featureset[" + i + "].feature,1);'>display</A></td></tr>";
 						break;
 					case 8:
-						// results.sort(sortOwner);
+						results.sort(sortOwner);
 
 						selectionType = "wwc5";
 						var title = results.length + " water wells were selected:";
@@ -578,7 +581,6 @@
 						// }
 
 						if (classification == 'noclass') {
-							console.log(results[i].feature.attributes["INPUT_SEQ_NUMBER"]);
 							content += "<tr><td width='*'>" + results[i].feature.attributes["OWNER_NAME"] + "</td><td width='25%'>" + results[i].feature.attributes["USE_DESC"] + "</td><td width='10%'>" + results[i].feature.attributes["MONITORING_NUMBER"] + "<td width='15%'>" + status + "</td><td width='15%' align='center'><A style='text-decoration:underline;color:blue;cursor:pointer' onclick='showPoint(featureset[" + i + "].feature,8);'>display</A><br/>";
 						}
 						if (classification == 'yieldclass') {
