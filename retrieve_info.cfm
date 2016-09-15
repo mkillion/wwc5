@@ -276,7 +276,7 @@
             w.quarter_call_3,
             initcap(s.typewell) as status,
             w.elevation_of_well,
-            initcap(u.use_description) as use,
+            initcap(u.use_desc) as use,
             w.completion_date,
             w.contractor_name as w_contractor,
             c.contractor_name as c_contractor,
@@ -286,16 +286,16 @@
             wwc5.wwc5_99_wells w,
             global.counties c,
             wwc5.well_status_type_rf7 s,
-            wwc5.welluse_type u,
+            gis_webinfo.wwc5_wells u,
             wwc5.contractors c
         where
             w.input_seq_number = #url.seq#
             and
+            u.input_seq_number = #url.seq#
+            and
             w.county_code = c.code(+)
             and
             w.type_of_action_code = s.wltwel(+)
-            and
-            w.water_use_code = u.water_use_code(+)
             and
             w.contractors_license_number = c.contractors_license(+)
     </cfquery>
