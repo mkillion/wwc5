@@ -1037,7 +1037,9 @@
 				break;
 			case 'remove_monitoring':
 				map.graphics.clear();
-				layerDef[visibleWellLyrID] = "water_use_code not in (8,10,11,122,240,242,245)";
+				// layerDef[visibleWellLyrID] = "water_use_code not in (8,10,11,122,240,242,245)";
+				// New list from Deb and Dana, 12/28/16:
+				layerDef[visibleWellLyrID] = "water_use_code not in (8,240,9,2020,2050,2030,2040,3000,3010,3030,3020,245,11,10,122,2070,2090,2080,107)";
 				visibleWellLyr.setLayerDefinitions(layerDef);
 				dojo.byId('wwc5_filter_on').style.display = "block";
 				filter = "remove_monitoring";
