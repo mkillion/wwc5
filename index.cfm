@@ -790,7 +790,7 @@
 				var x = feature.geometry.x;
 				var y = feature.geometry.y;
 
-				ext = new esri.geometry.Extent(x - 1200, y - 1200, x + 1000, y + 1000, sr);
+				ext = new esri.geometry.Extent(x - 1700, y - 1700, x + 1700, y + 1700, sr);
 				map.setExtent(ext);
 
 				var lyrId = results[0].layerId;
