@@ -261,7 +261,7 @@
     <cfquery name="qWWC5" datasource="plss">
         select
             w.input_seq_number,
-            c.name as county,
+            g.name as county,
             w.owner_name as owner_name,
             w.depth_of_completed_well,
             w.static_water_level,
@@ -284,16 +284,16 @@
             w.monitoring_number
         from
             wwc5.wwc5_99_wells w,
-            global.counties c,
+            global.counties g,
             wwc5.well_status_type_rf7 s,
             gis_webinfo.wwc5_wells u,
-            wwc5.contractors c
+            wwc5.wwc5_contractors c
         where
             w.input_seq_number = #url.seq#
             and
             u.input_seq_number = #url.seq#
             and
-            w.county_code = c.code(+)
+            w.county_code = g.code(+)
             and
             w.type_of_action_code = s.wltwel(+)
             and
