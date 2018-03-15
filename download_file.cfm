@@ -33,7 +33,7 @@
         global.counties g,
         wwc5.well_status_type_rf7 s,
         wwc5.welluse_type u,
-        wwc5.contractors c
+        wwc5.wwc5_contractors c
     where
     	w.county_code = g.code
         and
@@ -67,7 +67,7 @@
     <cfelseif w_contractor neq "">
         <cfset Contractor = w_contractor>
     </cfif>
-    
+
     <!--- Format long_lat_type: --->
     <cfset LongLatType = "">
     <cfif gps_longitude eq "">
@@ -75,7 +75,7 @@
     <cfelse>
     	<cfset LongLatType = "GPS">
     </cfif>
-    
+
     <!--- Write record: --->
     <cfset Record = '"#input_seq_number#","#county#","#township#","#township_direction#","#range#","#range_direction#","#section#","#spot#","#nad27_longitude#","#nad27_latitude#","#LongLatType#","#owner_name#","#use#","#DateFormat(completion_date,'mmm-dd-yyyy')#","#status#","#otherid#","#dwr_appropriation_number#","#directions#","#depth_of_completed_well#","#elevation_of_well#","#static_water_level#","#estimeted_yield#","#Contractor#"'>
 	<cffile action="append" file="#WWC5OutputFile#" output="#Record#" addnewline="yes">
@@ -124,7 +124,7 @@
 
 	<cfset Columns = "WELL_ID,LONGITUDE,LATITUDE,FEET,LOG">
 	<cffile action="write" file="#LithoOutputFile#" output="#Columns#" addnewline="yes">
-    
+
     <cfloop query="qLitho">
     	<cfset Record = '"#well_id#","#longitude#","#latitude#","#feet#","#log#"'>
         <cffile action="append" file="#LithoOutputFile#" output="#Record#" addnewline="yes">
@@ -147,8 +147,8 @@
     file="\\vmpyrite\d$\webware\Apache\Apache2\htdocs\kgsmaps\oilgas\output\wwc5_#TimeStamp#.zip"
     filter="*#TimeStamp#*"
     overwrite="yes" >
-    
-    
+
+
 <!--- Delete temporary KID table: --->
 <cfquery name="qDeleteTmp" datasource="gis_webinfo">
 	drop table wwc5#TimeStamp#
